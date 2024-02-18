@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>Detail Employee</h1>
+<div mat-dialog-content>
+  <form [formGroup]="detailForm" novalidate>
+    <div class="row">
+      <mat-form-field appearance="legacy">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" >
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" >
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" >
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" >
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" >
+        <mat-label>Birth Date</mat-label>
+        <input matInput formControlName="birthDate">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Basic Salary</mat-label>
+        <input matInput formControlName="basicSalary" >
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Group</mat-label>
+        <input matInput formControlName="group" >
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description" >
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Status</mat-label>
+        <input matInput formControlName="status" >
+      </mat-form-field>
+    </div>
+
+
+    <div mat-dialog-actions>
+      <button mat-raised-button  (click)="close()">Cancel</button>
+    </div>
+  </form>
+</div>

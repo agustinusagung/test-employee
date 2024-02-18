@@ -1,0 +1,257 @@
+/* custom container */
+.custom-container {
+  padding-bottom: 9rem;
+}
+.container-desktop {
+  padding-bottom: 6rem;
+}
+
+/* custom title menu */
+.custom-title div {
+  position: relative;
+  border-bottom: 3px solid;
+  border-bottom-color: #dcdcdc;
+}
+
+.custom-title div span {
+  display: absolute;
+  font-size: 1.5em;
+  border-bottom: 3px solid;
+  border-bottom-color: #fcbd00;
+}
+
+/* custom filter desktop */
+.custom-filter-desktop div:first-child span {
+  letter-spacing: 0.3em;
+}
+.custom-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.custom-label span,
+.custom-label mat-checkbox {
+  display: block;
+  font-weight: bold;
+}
+.custom-filter-desktop mat-form-field {
+  width: 100%;
+}
+.custom-filter-desktop mat-hint {
+  color: red;
+}
+.button-search-enable {
+  background-color: #003d79;
+}
+
+/* custom line for desktop */
+.custom-line-desktop div {
+  display: flex;
+}
+.custom-line-desktop div div:nth-child(1) {
+  position: relative;
+}
+.custom-line-desktop div div:nth-child(1) mat-icon {
+  font-size: 2.2rem;
+  position: absolute;
+  top: -1rem;
+  left: -1.9rem;
+  color: #a9a9a9;
+}
+.custom-line-desktop div div:nth-child(2) {
+  width: 100%;
+  border-bottom: 3px solid #a9a9a9;
+}
+
+/* custom field filter feature */
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #f7ad00 !important;
+}
+::ng-deep .mat-input-element {
+  caret-color: #f7ad00;
+}
+/*::ng-deep .mat-form-field-underline {
+  - change color of underline
+  - prevent underline input dot when it disable
+  background-color: #808080 !important;
+}*/
+.mat-focused .mat-icon {
+  color: #f7ad00;
+}
+::ng-deep .mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #f7ad00 !important;
+}
+mat-form-field {
+  width: 100%;
+}
+
+/* custom header card */
+.custom-header-card {
+  margin-bottom: -8px;
+  z-index: 2;
+  border-radius: 12px;
+  background-color: #003d79;
+  color: #ffffff;
+  padding-top: 0;
+  padding-bottom: 0;
+  cursor: pointer;
+}
+.custom-header-card .row {
+  padding: 8px 0;
+}
+.custom-header-card div > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  line-height: normal;
+}
+
+/* custom card */
+.custom-content-card {
+  border-radius: 12px;
+  background-color: #f0f8ff;
+  cursor: pointer;
+}
+.card-title {
+  margin-bottom: 3px !important;
+  font-weight: bold;
+  line-height: normal;
+}
+.card-subtitle {
+  color: rgb(73, 73, 73);
+  line-height: normal;
+}
+
+/* table */
+table {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.mat-header-cell,
+.mat-cell {
+  padding: 0 0.8em;
+}
+.mat-header-cell {
+  font-weight: bold;
+}
+.mat-cell {
+  font-size: 0.9em;
+}
+.custom-nodata-ontable {
+  color: #a9a9a9;
+}
+
+/* custom no data */
+.no-data-onload {
+  height: 100vh;
+}
+.no-data-onload img {
+  width: 70%;
+}
+.no-data-onload button {
+  margin-top: 1.6em;
+  color: #f7ad00;
+  border-radius: 1em;
+  border: 0.1em solid #f7ad00;
+}
+.no-data-onfilter {
+  height: 75vh;
+}
+.no-data-onfilter img {
+  width: 70%;
+}
+.no-data-onload h4, .no-data-onfilter h4 {
+  margin-top: -2em;
+  font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+/* custom fixed search button */
+.fixed-search {
+  position: fixed;
+  bottom: 2.5em;
+  right: 2.2em;
+  z-index: 3;
+}
+.fixed-search button {
+  background-color: #f7ad00;
+  width: 5em;
+  height: 5em;
+  padding: 0 1.1em 1.9em 0;
+}
+.fixed-search button mat-icon {
+  font-size: 3.1em;
+  color: white;
+}
+
+/* custom todolist modal */
+.custom-modal-header mat-icon {
+  font-weight: bold;
+  font-size: 2.2em;
+}
+.custom-modal-body mat-form-field {
+  width: 100%;
+}
+.custom-modal-body mat-hint {
+  color: red;
+}
+.custom-modal-body button {
+  width: 100%;
+}
+
+/* custom cabang kosong */
+.custom-empty-branch {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.custom-empty-branch img {
+  width: 80%;
+}
+.custom-empty-branch .row:last-child {
+  margin-top: -4.7em;
+}
+.custom-empty-branch p {
+  font-size: 1em;
+  font-family: cursive;
+}
+
+.btn-search {
+  margin-bottom:10px;
+}
+
+.edit-icon {
+  color: yellow
+}
+
+.delete-icon {
+  color: red
+}
+
+/* responsive */
+@media (min-width: 576px) {
+}
+
+@media (max-width: 767.98px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+  .custom-header-card .row {
+    padding: 10px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}

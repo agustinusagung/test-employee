@@ -1,19 +1,16 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "93e54ad1-d129-4020-9365-1ce7d5dcbeb1"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-employee": {
+    "TestEmployee": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "standalone": false
-        },
-        "@schematics/angular:directive": {
-          "standalone": false
-        },
-        "@schematics/angular:pipe": {
-          "standalone": false
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -21,21 +18,23 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/test-employee",
             "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -44,21 +43,51 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "5kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "uat": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "5kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.uat.ts"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
+              "buildOptimizer": false,
               "optimization": false,
+              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -67,10 +96,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "test-employee:build:production"
+              "browserTarget": "TestEmployee:build:production"
             },
             "development": {
-              "buildTarget": "test-employee:build:development"
+              "browserTarget": "TestEmployee:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,22 +107,22 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "test-employee:build"
+            "browserTarget": "TestEmployee:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -101,5 +130,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "TestEmployee"
 }

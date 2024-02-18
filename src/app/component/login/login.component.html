@@ -1,0 +1,25 @@
+<div class="container-fluid center-form">
+  <div class="col-lg-4 col-md-8 col-sm-8">
+    <mat-card>
+      <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <div>
+        <mat-form-field class="col-lg-12 col-md-8 col-sm-8">
+          <input  type="text" matInput placeholder="Username" [formControl]="username">
+          <mat-error *ngIf="username.hasError('required')">Username is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-lg-12 col-md-8 col-sm-8">
+          <input type="password" matInput placeholder="Password" [formControl]="password">
+          <mat-error *ngIf="password.hasError('required')">Password is required</mat-error>
+        </mat-form-field>
+        <div class="button col-lg-6 col-md-8 col-sm-8">
+         <button mat-raised-button color="primary" class="button-find ps-4 pe-4" (click)="login()">Login</button>
+        </div>
+      </div>
+     </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
+
